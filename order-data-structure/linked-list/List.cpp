@@ -20,3 +20,15 @@ void List<T>::insertAtFront(const T &data) {
     node->next = head_;
     head_ = node;
 }
+
+template <class T>
+typename List<T>::ListNode *List<T>::find(const T &data) {
+    ListNode* curNode = head_;
+    while (curNode != nullptr) {
+        if (curNode->data == data) {
+            return curNode;
+        }
+        curNode = curNode->next;
+    }
+    return nullptr;
+}
